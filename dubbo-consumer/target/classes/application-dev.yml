@@ -2,7 +2,6 @@
 dubbo:
   registry:
     nacos:
-      # 192.168.1.37
       address: nacos://127.0.0.1:8848
 
   provider:

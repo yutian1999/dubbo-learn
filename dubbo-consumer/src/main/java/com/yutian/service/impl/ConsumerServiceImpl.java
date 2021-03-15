@@ -10,6 +10,10 @@ import com.yutian.service.ConsumerService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import java.util.Set;
+
 
 /**
  *
@@ -19,12 +23,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
-    @Reference(id = "providerService",
-            interfaceClass = com.yutian.facade.ProviderService.class,
-            url = "dubbo://localhost:20881",
-            version = "1.0.0",
-            group = "dubbo-provider",
-            validation = "true")
+    @Reference(validation = "true")
     private ProviderService providerService;
 
 
@@ -36,6 +35,13 @@ public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public String checkParam(String param) {
         RequestDTO requestDTO = new RequestDTO();
-        return providerService.checkParamDemo(requestDTO);
+        try{
+            String s = providerService.checkParamDemo(requestDTO);
+            return s;
+        }catch (ConstraintViolationException e){
+            Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
+            System.out.println(constraintViolations);
+            return constraintViolations.toString();
+        }
     }
 }

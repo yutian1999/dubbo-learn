@@ -34,3 +34,6 @@ dubbo:
     timeout: 60000
     retries: 0
     check: false
+    filter: validationFilter
+  provider:
+    filter: validationFilter

@@ -16,6 +16,8 @@ import java.io.Serializable;
  */
 public class RequestDTO implements Serializable {
 
+    private static final long serialVersionUID = 7158911668568000392L;
+
     @NotNull
     private String name;
 
