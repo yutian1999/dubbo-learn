@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+#Jackson
+spring:
+  profiles:
+    active: dev
+  jackson:
+    default-property-inclusion: non_null
+  application:
+    name: dubbo-provider
+
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+# Dubbo
+dubbo:
+  application:
+    name: dubbo-consumer
+    qos-enable: false
+    logger: slf4j
+  scan:
+    base-packages: com.yutian.facade
+  protocol:
+    name: dubbo
+    port: 20882
+  consumer:
+    group: dubbo-provider
+    version: 1.0.0
+    timeout: 60000
+    retries: 0
+    check: false

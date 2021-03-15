@@ -1,0 +1,20 @@
+# Dubbo 注册中心
+dubbo:
+  registry:
+    nacos:
+      # 192.168.1.37
+      address: nacos://127.0.0.1:8848
+
+
+  provider:
+    registry:
+        protocol: nacos
+        port: 8848
+        address: ${dubbo.registry.nacos.address}
+    register: false
+  consumer:
+    registry:
+        protocol: nacos
+        port: 8848
+        address: ${dubbo.registry.nacos.address}
+
