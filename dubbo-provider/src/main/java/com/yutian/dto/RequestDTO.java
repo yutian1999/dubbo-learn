@@ -18,11 +18,10 @@ public class RequestDTO implements Serializable {
 
     private static final long serialVersionUID = 7158911668568000392L;
 
-    @NotNull
+    @NotNull(message = "name 不能为空")
     private String name;
 
-    @Min(15)
-    @Max(22)
+    @NotNull(message = "age 不能为空")
     private Integer age;
 
     public String getName() {

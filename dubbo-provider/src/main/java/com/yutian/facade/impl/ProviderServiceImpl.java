@@ -13,7 +13,7 @@ import org.apache.dubbo.config.annotation.Service;
  * @author wengyz
  * @version ProviderServiceImpl.java, v 0.1 2020-11-18 10:59 上午
  */
-@Service(validation = "true")
+@Service()
 public class ProviderServiceImpl implements ProviderService {
 
 

@@ -7,7 +7,6 @@ package com.yutian;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.validation.annotation.Validated;
 
 /**
  *
@@ -16,7 +15,6 @@ import org.springframework.validation.annotation.Validated;
  */
 @SpringBootApplication(scanBasePackages = {"com.yutian"})
 @EnableDubbo
-@Validated
 public class ConsumerApplication {
 
     public static void main(String[] args) {
