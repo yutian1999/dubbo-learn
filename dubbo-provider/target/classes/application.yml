@@ -33,5 +33,5 @@ dubbo:
     version: 1.0.0
     timeout: 60000
     retries: 0
-    filter: dubboParamCheckFilter
+    filter: providerFilter
 

@@ -7,6 +7,7 @@ package com.yutian;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 /**
  *
@@ -14,6 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version ConsumerApplication.java, v 0.1 2020-11-18 11:18 上午
  */
 @SpringBootApplication(scanBasePackages = {"com.yutian"})
+@ServletComponentScan
 @EnableDubbo
 public class ConsumerApplication {
 

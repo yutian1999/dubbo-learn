@@ -2,8 +2,10 @@
  * aljk.com
  * Copyright (C) 2013-2021 All Rights Reserved.
  */
-package com.yutian.filter;
+package com.yutian.check.filter;
 
+import com.yutian.check.result.ResultUtils;
+import org.apache.dubbo.common.constants.CommonConstants;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.*;
 
@@ -15,11 +17,11 @@ import java.lang.reflect.Field;
  * @author wengyz
  * @version DubboParamCheckFilter.java, v 0.1 2021-03-16 10:51 上午
  */
-@Activate(group = "consumer",order = -1)
-public class DubboParamCheckFilter implements Filter {
+@Activate(group = CommonConstants.PROVIDER,order = -1)
+public class DubboProviderParamCheckFilter implements Filter {
+
     @Override
-    public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
-        boolean flag = false;
+    public Result invoke(Invoker<?> invoker, Invocation invocation) {
         Result result = new AsyncRpcResult(invocation);
         Class<?>[] parameterTypes = invocation.getParameterTypes();
         Object[] arguments = invocation.getArguments();
@@ -33,14 +35,11 @@ public class DubboParamCheckFilter implements Filter {
                     field.setAccessible(true);
                     Object o = field.get(arguments[0]);
                     if (o == null){
-                        sb.append(field.getName()).append(",");
-                        flag = true;
+                        sb.append(field.getName()).append("不能为空");
+                        result.setValue(ResultUtils.fail("-10001",sb.toString()).toString());
+                        return result;
                     }
                 }
-            }
-            if (flag){
-                result.setValue(sb.toString().substring(0,sb.toString().length() -1) + "不能为空");
-                return result;
             }
         } catch (Exception e) {
             e.printStackTrace();

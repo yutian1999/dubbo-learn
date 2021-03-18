@@ -4,7 +4,9 @@
  */
 package com.yutian.controller;
 
+import com.yutian.dto.RequestDTO;
 import com.yutian.service.ConsumerService;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,7 +30,8 @@ public class DemoController {
     }
 
     @RequestMapping("/check")
-    public String checkParamDemo(){
+    public String checkParamDemo(@RequestBody RequestDTO requestDTO){
+        System.out.println(requestDTO);
         return consumerService.checkParam("yrt");
     }
 }

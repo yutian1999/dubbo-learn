@@ -32,8 +32,8 @@ public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public String checkParam(String param) {
         RequestDTO requestDTO = new RequestDTO();
-        requestDTO.setName("wyz");
-        requestDTO.setAge(18);
+//        requestDTO.setName("wyz");
+//        requestDTO.setAge(18);
         return providerService.checkParamDemo(requestDTO);
     }
 }

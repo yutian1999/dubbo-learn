@@ -1,0 +1,2 @@
+providerFilter=com.yutian.check.filter.DubboProviderParamCheckFilter
+consumerFilter=com.yutian.check.filter.DubboConsumerParamCheckFilter
