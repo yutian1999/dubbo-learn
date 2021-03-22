@@ -14,8 +14,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @author wengyz
  * @version ConsumerApplication.java, v 0.1 2020-11-18 11:18 上午
  */
-@SpringBootApplication(scanBasePackages = {"com.yutian"})
-@ServletComponentScan
+@SpringBootApplication(scanBasePackages = {"com.alijk.component","com.yutian"})
+@ServletComponentScan("com.alijk.component")
 @EnableDubbo
 public class ConsumerApplication {
 

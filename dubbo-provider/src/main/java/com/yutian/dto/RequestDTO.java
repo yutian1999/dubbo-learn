@@ -3,9 +3,6 @@
  * Copyright (C) 2013-2021 All Rights Reserved.
  */
 package com.yutian.dto;
-
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 

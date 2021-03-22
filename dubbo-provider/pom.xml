@@ -48,12 +48,23 @@
             <artifactId>nacos-discovery-spring-boot-starter</artifactId>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>org.example</groupId>-->
+<!--            <artifactId>param-check</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
+        <!-- dubbo end -->
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>com.alijk.bqhealth</groupId>
             <artifactId>param-check</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <!-- dubbo end -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.example</groupId>-->
+<!--            <artifactId>param-check</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

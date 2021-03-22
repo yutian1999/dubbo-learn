@@ -61,10 +61,16 @@
         <!-- dubbo end -->
 
         <dependency>
-            <groupId>org.example</groupId>
+            <groupId>com.alijk.bqhealth</groupId>
             <artifactId>param-check</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.example</groupId>-->
+<!--            <artifactId>param-check</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 

@@ -4,7 +4,6 @@
  */
 package com.yutian.check.interceptor;
 import com.alibaba.fastjson.JSON;
-import com.yutian.check.exception.SystemException;
 import com.yutian.check.result.ResultUtils;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
